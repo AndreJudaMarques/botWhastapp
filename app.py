@@ -17,7 +17,7 @@ for linha in pagina_cliente.iter_rows(min_row=2):
       telefone = linha[1].value
       vencimento = linha[2].value
 
-      mensagem = f'Olá {nome}, este é meu bot Python feito por mim para teste, só queria dizer que você é bonito(a)!'
+      mensagem = f'Olá {nome}, bom final de semana!!'
 
       #link personalizado, com base nos dados da planilha
       link_mensgem_whatsapp = f'https://web.whatsapp.com/send?phone={telefone}&text={quote(mensagem)}'
@@ -25,11 +25,11 @@ for linha in pagina_cliente.iter_rows(min_row=2):
       sleep(10)
       try:
             seta = pyautogui.locateOnScreen('seta.png')
-            sleep(5)
+            sleep(10)
             pyautogui.click(seta)
             sleep(5)
             pyautogui.hotkey('ctrl', 'w')
-            sleep(5)
+            sleep(10)
       except:
             print(f'Não foi possivel enviar mensagem para {nome}')
             with open('erros.csv', 'a', newline='', encoding='utf-8') as arquivo:
